@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Listen to me Morti</string>
+    <string name="locations">Локации</string>
+    <string name="characters">Персонажи</string>
+    <string name="residents">Резиденты</string>
+    <string name="name">Имя</string>
+    <string name="type">Тип</string>
+    <string name="state">Статус</string>
+    <string name="species">Особенности</string>
+    <string name="location">Локация</string>
+    <string name="logo">Logo</string>
+</resources>
