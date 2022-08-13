@@ -1,29 +1,17 @@
 package com.example.listentomemorti.adapters
 
-import android.content.Context
-import android.opengl.Visibility
-import android.os.Binder
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
-import com.example.listentomemorti.ListOfItemViewModel
-import com.example.listentomemorti.ListOfItemsActivity
-import com.example.listentomemorti.R
 import com.example.listentomemorti.databinding.ListItemBinding
-import com.example.listentomemorti.pojo.CharacterPojo
-import com.example.listentomemorti.pojo.LocationPojo
 import com.example.listentomemorti.pojo.ResultCharacterPojo
-import com.example.listentomemorti.pojo.ResultLocationPojo
 import com.squareup.picasso.Picasso
 
 class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder>() {
 
     var listOfCharacters = listOf<ResultCharacterPojo>()
 
-    inner class ItemAdapterViewHolder(val viewBinding: ListItemBinding) : RecyclerView.ViewHolder(viewBinding.root) {
+    inner class ItemAdapterViewHolder(viewBinding: ListItemBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         val nameItm = viewBinding.tvName
         val stateItm = viewBinding.tvState
         val speciesItm = viewBinding.tvSpecies

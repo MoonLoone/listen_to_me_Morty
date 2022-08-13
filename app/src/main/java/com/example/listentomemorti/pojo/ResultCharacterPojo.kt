@@ -2,8 +2,6 @@ package com.example.listentomemorti.pojo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
-import com.example.listentomemorti.converters.CharacterConverter
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import org.jetbrains.annotations.NotNull
