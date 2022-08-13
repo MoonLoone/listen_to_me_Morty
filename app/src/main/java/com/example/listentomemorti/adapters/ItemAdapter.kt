@@ -54,4 +54,9 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder>() {
     }
 
     override fun getItemCount() =  listOfCharacters.size
+
+    interface onCharacterClickListener{
+        fun onClick(character: ResultCharacterPojo)
+    }
+
 }
