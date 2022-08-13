@@ -2,9 +2,6 @@ package com.example.listentomemorti
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -29,12 +26,8 @@ class ListOfItemsActivity : AppCompatActivity() {
 
 
             CoroutineScope(Dispatchers.Main).launch {
-                try {
                     adapter.listOfCharacters = viewModel.makeStartData() ?: listOf()
                     rvItem.adapter = adapter
-                }catch (exc:Exception){
-                    Log.d("Mommy", exc.message.toString())
-                }
             }
 
             adapter.onChrClickListener = object : ItemAdapter.OnCharacterClickListener {

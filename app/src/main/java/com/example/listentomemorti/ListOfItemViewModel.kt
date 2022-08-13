@@ -1,12 +1,10 @@
 package com.example.listentomemorti
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.listentomemorti.api.ApiFactory
 import com.example.listentomemorti.database.AppDatabase
 import com.example.listentomemorti.pojo.ResultCharacterPojo
-import com.example.listentomemorti.pojo.ResultLocationPojo
 
 class ListOfItemViewModel(application: Application): AndroidViewModel(application){
 
@@ -38,4 +36,7 @@ class ListOfItemViewModel(application: Application): AndroidViewModel(applicatio
             db.dbDAO().updateCharacter(characterPojo)
     }
 
+    suspend fun getFavourites(): List<ResultCharacterPojo>{
+        return db.dbDAO().getFavourites()
+    }
 }
