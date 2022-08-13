@@ -27,8 +27,15 @@ class ListOfItemViewModel(application: Application): AndroidViewModel(applicatio
         return db.dbDAO().getAllCharacters()
     }
 
+    suspend fun getCharacter(id:Int): ResultCharacterPojo{
+        return db.dbDAO().getInfoForCharacter(id)
+    }
+
     suspend fun makeStartData() = ApiFactory.apiService.getCharacter(1).results
 
 
+    fun updateCharacterInfo(characterPojo: ResultCharacterPojo) {
+            db.dbDAO().updateCharacter(characterPojo)
+    }
 
 }

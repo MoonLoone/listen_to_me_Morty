@@ -1,12 +1,17 @@
 package com.example.listentomemorti.adapters
 
+import android.content.Context
 import android.opengl.Visibility
 import android.os.Binder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listentomemorti.ListOfItemViewModel
 import com.example.listentomemorti.ListOfItemsActivity
+import com.example.listentomemorti.R
 import com.example.listentomemorti.databinding.ListItemBinding
 import com.example.listentomemorti.pojo.CharacterPojo
 import com.example.listentomemorti.pojo.LocationPojo
@@ -20,7 +25,6 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder>() {
 
     inner class ItemAdapterViewHolder(val viewBinding: ListItemBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         val nameItm = viewBinding.tvName
-        val typeItm = viewBinding.tvType
         val stateItm = viewBinding.tvState
         val speciesItm = viewBinding.tvSpecies
         val locationItm = viewBinding.tvLocation
@@ -42,11 +46,13 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder>() {
             with(holder) {
                 with(characterObj) {
                     nameItm.text = name
-                    typeItm.text = type
                     stateItm.text = status
                     speciesItm.text = species
                     locationItm.text = location?.name
                     Picasso.get().load(image).into(picture)
+                }
+                itemView.setOnClickListener{
+                    onChrClickListener?.onClick(characterObj)
                 }
             }
 
@@ -55,7 +61,9 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder>() {
 
     override fun getItemCount() =  listOfCharacters.size
 
-    interface onCharacterClickListener{
+    var onChrClickListener: OnCharacterClickListener? = null
+
+    interface OnCharacterClickListener{
         fun onClick(character: ResultCharacterPojo)
     }
 

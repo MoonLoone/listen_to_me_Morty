@@ -7,7 +7,7 @@ import com.example.listentomemorti.pojo.CharacterPojo
 import com.example.listentomemorti.pojo.LocationPojo
 import com.example.listentomemorti.pojo.ResultCharacterPojo
 
-@Database(entities = [ResultCharacterPojo::class], version = 2, exportSchema = false)
+@Database(entities = [ResultCharacterPojo::class], version = 5, exportSchema = false)
 @TypeConverters(CharacterConverter::class)
 abstract class AppDatabase: RoomDatabase() {
 

@@ -9,4 +9,6 @@
     <string name="species">Особенности</string>
     <string name="location">Локация</string>
     <string name="logo">Logo</string>
+    <string name="origin">Origin location</string>
+    <string name="episodes">Episodes:</string>
 </resources>

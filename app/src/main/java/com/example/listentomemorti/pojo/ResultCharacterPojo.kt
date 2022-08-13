@@ -6,6 +6,7 @@ import androidx.room.TypeConverter
 import com.example.listentomemorti.converters.CharacterConverter
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import org.jetbrains.annotations.NotNull
 
 
 @Entity(tableName = "character")
@@ -16,9 +17,14 @@ data class ResultCharacterPojo (
     @Expose
     val id: Int? = null,
 
+    @NotNull
     @SerializedName("name")
     @Expose
-    val name: String? = null,
+    val name: String = "Ordinary man",
+
+    @SerializedName("episode")
+    @Expose
+    val episode: List<String>? = null,
 
     @SerializedName("status")
     @Expose
@@ -32,6 +38,14 @@ data class ResultCharacterPojo (
     @Expose
     val type: String? = null,
 
+    @SerializedName("gender")
+    @Expose
+    val gender: String? = null,
+
+    @SerializedName("origin")
+    @Expose
+    val origin: ResultLocationPojo? = null,
+
     @SerializedName("location")
     @Expose
     val location: ResultLocationPojo? = null,
@@ -40,4 +54,5 @@ data class ResultCharacterPojo (
     @Expose
     val image: String? = null,
 
+    var isFavourite: Boolean = false
 )
