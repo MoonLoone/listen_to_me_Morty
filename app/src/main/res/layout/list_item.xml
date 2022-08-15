@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="10dp"
     >
 
 
@@ -15,34 +17,28 @@
 
         <TextView
             android:id="@+id/tvLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
+            android:textColor="@color/white"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLocationHard"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvLocationHard"
             app:layout_constraintTop_toBottomOf="@+id/tvSpecies" />
 
         <TextView
             android:id="@+id/tvSpecies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
+            android:textColor="@color/white"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpeciesHard"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvSpeciesHard"
             app:layout_constraintTop_toBottomOf="@+id/tvState" />
 
-        <TextView
-            android:id="@+id/tvNameHard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/name"
-            app:layout_constraintStart_toEndOf="@+id/img"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="16sp"/>
 
         <ImageView
             android:id="@+id/img"
@@ -50,10 +46,12 @@
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="@string/logo" />
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tvName"
@@ -61,28 +59,32 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/tvNameHard"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvStateHard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/state"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/img"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameHard" />
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
         <TextView
             android:id="@+id/tvSpeciesHard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/species"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/img"
             app:layout_constraintTop_toBottomOf="@+id/tvStateHard" />
@@ -91,20 +93,24 @@
             android:id="@+id/tvLocationHard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/location"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/img"
             app:layout_constraintTop_toBottomOf="@+id/tvSpeciesHard" />
 
         <TextView
             android:id="@+id/tvState"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
             android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvSpeciesHard"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvStateHard"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />
 

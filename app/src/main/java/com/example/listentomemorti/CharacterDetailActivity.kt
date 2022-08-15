@@ -3,6 +3,7 @@ package com.example.listentomemorti
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CharacterDetailActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_character_detail)
@@ -50,12 +52,20 @@ class CharacterDetailActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.tvOriginDetail).text = character.origin?.name
             findViewById<TextView>(R.id.tvSpeciesDetail).text = character.species
             findViewById<TextView>(R.id.tvStatusDetail).text = character.status
-            findViewById<TextView>(R.id.tvEpisodesList).text = character.episode.toString()
+            findViewById<TextView>(R.id.tvEpisodesList).text = parseOfEpisode(character.episode)
         }
     }
 
-
-
+    private fun parseOfEpisode(episodes: List<String>?): String{
+        return if (episodes != null) {
+            var result = ""
+            for (item in episodes){
+                val itemSub = item.substring(item.lastIndexOf('/')+1)
+                result+= "$itemSub, "
+            }
+            result.substring(0,result.length-2)
+        }else ""
+    }
 
 
     companion object {
