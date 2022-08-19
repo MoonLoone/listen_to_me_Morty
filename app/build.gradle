@@ -39,6 +39,10 @@ dependencies {
 
     def room_version = "2.4.3"
 
+    testImplementation "org.junit.jupiter:junit-jupiter:5.8.2"
+    testImplementation "org.mockito:mockito-inline:4.0.0"
+    testImplementation "org.mockito:mockito-junit-jupiter:4.0.0"
+
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
     kapt("androidx.room:room-compiler:$room_version")

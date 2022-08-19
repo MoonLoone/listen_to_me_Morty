@@ -13,7 +13,7 @@ class FavouriteCharacterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_character)
-        val viewModel = ListOfItemViewModel(application)
+        val viewModel = ListOfItemViewModel.getInstance(application)
         val rvFavourites = findViewById<RecyclerView>(R.id.rvFavourites)
         val adapterFavourites = ItemAdapter()
 

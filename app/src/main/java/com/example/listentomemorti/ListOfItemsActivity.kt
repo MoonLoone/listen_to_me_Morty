@@ -22,13 +22,8 @@ class ListOfItemsActivity : AppCompatActivity() {
 
             val rvItem = findViewById<RecyclerView>(R.id.rvItems)
             val adapter = ItemAdapter()
-            val viewModel = ListOfItemViewModel(application)
+            val viewModel = ListOfItemViewModel.getInstance(application)
 
-
-            CoroutineScope(Dispatchers.Main).launch {
-                    adapter.listOfCharacters = viewModel.makeStartData() ?: listOf()
-                    rvItem.adapter = adapter
-            }
 
             adapter.onChrClickListener = object : ItemAdapter.OnCharacterClickListener {
                 override fun onClick(character: ResultCharacterPojo) {
@@ -41,8 +36,8 @@ class ListOfItemsActivity : AppCompatActivity() {
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                    viewModel.makeData()
                     adapter.listOfCharacters = viewModel.getCharacters()
+                    rvItem.adapter = adapter
                 }
 
             findViewById<Button>(R.id.buttonFavourites).setOnClickListener {
